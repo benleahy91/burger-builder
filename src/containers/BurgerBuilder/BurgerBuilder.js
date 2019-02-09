@@ -36,6 +36,7 @@ class BurgerBuilder extends Component {
 	};
 
 	removeIngredientHandler = (type) => {
+		
 
 	};
 
