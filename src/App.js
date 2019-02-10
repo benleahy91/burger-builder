@@ -12,7 +12,7 @@ class App extends Component {
         </Layout>
       </div>
 		);
-  }
-}
+  };
+};
 
 export default App;
