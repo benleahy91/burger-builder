@@ -8,7 +8,6 @@ const navigationItem = (props) => (
 			href={ props.link }
 			className={ props.active ? classes.active : null }>{ props.children }
 		</a>
-			{ props.children }
 	</li>
 );
 
