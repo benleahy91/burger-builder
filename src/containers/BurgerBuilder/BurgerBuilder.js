@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Aux from '../../hoc/Aux';
+import Aux from '../../hoc/Aux/Aux';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls'
 import Modal from '../../components/UI/Modal/Modal';
@@ -49,7 +49,6 @@ class BurgerBuilder extends Component {
 		const newPrice = oldPrice + priceAddition;
 		this.setState({ totalPrice: newPrice, ingredients: updatedIngredients });
 		this.updatePurchaseState(updatedIngredients);
-
 	};
 
 	removeIngredientHandler = (type) => {
@@ -59,7 +58,7 @@ class BurgerBuilder extends Component {
 		};
 		const updatedCount = oldCount - 1;
 		const updatedIngredients = {
-				...this.state.ingredients
+			...this.state.ingredients
 		};
 		updatedIngredients[type] = updatedCount;
 		const priceDeduction = INGREDIENT_PRICE[type];
@@ -78,8 +77,7 @@ class BurgerBuilder extends Component {
 	};
 
 	purchaseContinueHandler = () => {
-		console.log('Continue');
-		
+		console.log('Continue');	
 	}
 
 	render() {
@@ -105,8 +103,7 @@ class BurgerBuilder extends Component {
 					disabled={ disabledInfo }
 					purchaseable= { this.state.purchaseable }
 					ordered= { this.purchaseHandler }
-					price= { this.state.totalPrice }
-				/>
+					price= { this.state.totalPrice } />
 			</Aux>
 		);
 	};
