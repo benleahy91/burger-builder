@@ -10,7 +10,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import burgerBuilderReducer from './store/reducers/burgerBuilder';
 import orderReducer from './store/reducers/order';
-import burger from './components/Burger/Burger';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

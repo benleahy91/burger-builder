@@ -4,11 +4,12 @@ import classes from './Order.css'
 const order = (props) => {
 	const ingredients = [];
 
-	for ( let ingredientName in props.ingredients ) {
+	for (let ingredientName in props.ingredients) {
 		ingredients.push(
 			{
 				name: ingredientName,
-				amount: props.ingredients[ingredientName]
+				amount: props.ingredients[ingredientName],
+				price: 2
 			}
 		);
 	};
@@ -22,16 +23,15 @@ const order = (props) => {
 				border: '1px solid #ccc',
 				padding: '5px'
 			}}
-			key={ ig.name }>{ig.name} ({ ig.amount })</span>
+			key={ ig.name }>{ ig.name } ({ ig.amount })</span>
 	});
 
 	return(
-		<div className={ classes.order }>
-			<p>Ingredients: {ingredientOutput}</p>
-			<p>Price: <strong>${ props.price.toFixed(2) }</strong> </p>
+		<div className={ classes.Order }>
+			<p>Ingredients: { ingredientOutput }</p>
+			<p>Price: <strong>USD { Number.parseFloat(props.price).toFixed(2) }</strong></p>
 		</div>
 	);
 };
-
 
 export default order;

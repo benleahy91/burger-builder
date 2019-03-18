@@ -101,6 +101,7 @@ class ContactData extends Component {
 		for (let formElementIdentifier in this.state.orderForm) {
 			formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
 		};
+		
 		const order = {
 			ingredients: this.props.ings,
 			price: this.props.price,
@@ -181,10 +182,10 @@ class ContactData extends Component {
 
 const mapStateToProps = state => {
 	return {
-		ings: state.burgerBuilder.ingredients,
-		price: state.burgerBuilder.price,
-		loading: state.order.loading
-	};
+			ings: state.burgerBuilder.ingredients,
+			price: state.burgerBuilder.totalPrice,
+			loading: state.order.loading
+	}
 };
 
 const mapDispatchToProps = dispatch => {
