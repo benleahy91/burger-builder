@@ -47,16 +47,13 @@ export const auth = (email, password, isSignup) => {
 			email: email,
 			password: password,
 			returnSecureToken: true
-		};
-		console.log(authData);
-		
-		let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyCwYq0w36Cs0lvalO3b_B2vBo59BTV2Jus';
+		};		
+		let url = process.env.SIGNUP_KEY;
 		if (!isSignup) {
-			url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyCwYq0w36Cs0lvalO3b_B2vBo59BTV2Jus'
+			url = process.env.SIGNIN_KEY;
 		};
 		axios.post(url, authData)
 		.then(response => {
-			console.log(response);
 			const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
 			localStorage.setItem('token', response.data.idToken);
 			localStorage.setItem('expirationDate', expirationDate);

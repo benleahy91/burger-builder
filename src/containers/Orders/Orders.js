@@ -16,15 +16,12 @@ class Orders extends Component {
 	render () {
 		let orders = <Spinner />;
 		if ( !this.props.loading ) {
-			console.log(this.props);
 			orders = this.props.orders.map( order => (
 				<Order
 					key={ order.id }
 					ingredients={ order.ingredients }
 					price={ order.price } />
-			));
-			// console.log(orders);
-			
+			));			
 		};
 		return (
 			<div>
@@ -34,9 +31,7 @@ class Orders extends Component {
 	};
 };
 
-const mapStateToProps = state => {
-	// console.log(state.order);
-	
+const mapStateToProps = state => {	
 	return {
 		orders: state.order.orders,
 		loading: state.order.loading,
