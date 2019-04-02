@@ -52,8 +52,6 @@ export const auth = (email, password, isSignup) => {
 		if (!isSignup) {
 			url = process.env.SIGNIN_KEY;
 		};
-		console.log(url);
-		
 		axios.post(url, authData)
 		.then(response => {
 			const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
