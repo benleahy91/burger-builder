@@ -47,11 +47,13 @@ export const auth = (email, password, isSignup) => {
 			email: email,
 			password: password,
 			returnSecureToken: true
-		};		
+		};
 		let url = process.env.SIGNUP_KEY;
 		if (!isSignup) {
 			url = process.env.SIGNIN_KEY;
 		};
+		console.log(url);
+		
 		axios.post(url, authData)
 		.then(response => {
 			const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);

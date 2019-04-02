@@ -37,7 +37,7 @@ dotenvFiles.forEach(dotenvFile => {
         path: dotenvFile,
       })
     );
-  }
+  };
 });
 
 // We support resolving modules according to `NODE_PATH`.
