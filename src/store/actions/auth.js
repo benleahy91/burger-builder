@@ -49,7 +49,6 @@ export const auth = (email, password, isSignup) => {
 			returnSecureToken: true
 		};
 		let url = process.env.REACT_APP_SIGNUP_KEY;
-		console.log(process.env);
 		if (!isSignup) {
 			url = process.env.REACT_APP_SIGNIN_KEY;
 		};
