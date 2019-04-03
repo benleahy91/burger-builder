@@ -48,10 +48,10 @@ export const auth = (email, password, isSignup) => {
 			password: password,
 			returnSecureToken: true
 		};
-		let url = process.env.SIGNUP_KEY;
+		let url = process.env.REACT_APP_SIGNUP_KEY;
 		console.log(process.env);
 		if (!isSignup) {
-			url = process.env.SIGNIN_KEY;
+			url = process.env.REACT_APP_SIGNIN_KEY;
 		};
 		axios.post(url, authData)
 		.then(response => {
