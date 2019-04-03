@@ -48,10 +48,16 @@ export const auth = (email, password, isSignup) => {
 			password: password,
 			returnSecureToken: true
 		};
+		console.log(authData);
+		
 		let url = process.env.REACT_APP_SIGNUP_KEY;
+		console.log(url);
+		
 		if (!isSignup) {
 			url = process.env.REACT_APP_SIGNIN_KEY;
 		};
+		console.log(url);
+		
 		axios.post(url, authData)
 		.then(response => {
 			const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
