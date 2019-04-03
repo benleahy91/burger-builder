@@ -49,6 +49,7 @@ export const auth = (email, password, isSignup) => {
 			returnSecureToken: true
 		};
 		let url = process.env.SIGNUP_KEY;
+		console.log(process.env);
 		if (!isSignup) {
 			url = process.env.SIGNIN_KEY;
 		};
